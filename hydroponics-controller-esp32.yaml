@@ -1,0 +1,32 @@
+esphome:
+  name: hydroponics-controller-esp32
+  friendly_name: Hydroponics Controller ESP32
+
+esp32:
+  board: esp32dev
+  framework:
+    type: arduino
+
+# Enable logging
+logger:
+
+# Enable Home Assistant API
+api:
+  encryption:
+    key: "dR6TKkX+S9cbFQYCAnYlzR0ly+JBmsZu9qYwn1+nOAs="
+
+ota:
+  - platform: esphome
+    password: "bb5b6a2138515376cc4bda920e2b42ad"
+
+wifi:
+  ssid: !secret wifi_ssid
+  password: !secret wifi_password
+
+  # Enable fallback hotspot (captive portal) in case wifi connection fails
+  ap:
+    ssid: "Hydroponics-Controller-Esp32"
+    password: "sWLgWqyj0Jdw"
+
+captive_portal:
+    
